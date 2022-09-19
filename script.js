@@ -3,13 +3,12 @@ var mins = document.getElementById("mins");
 var secs = document.getElementById("secs");
 
 var startBtn = document.getElementById("btnStart");
-var stopBtn = document.getElementById("btnStop");
+var pauseBtn = document.getElementById("btnPause");
 
 startBtn.addEventListener("click", startClock);
-stopBtn.addEventListener("click", stopClock);
+pauseBtn.addEventListener("click", pauseClock);
 
 var waitTimer;
-var strTime;
 
 var date = new Date();
 
@@ -37,11 +36,11 @@ function twoDigit(digit) {
 }
 
 function startClock() {
-  stopClock();
+  pauseClock();
   waitTimer = setInterval(displayTime, 100);
 }
 
-function stopClock() {
+function pauseClock() {
   clearInterval(waitTimer);
 }
 
@@ -120,9 +119,9 @@ startBtn.addEventListener("click", (e) => {
   });
 });
 
-stopBtn.addEventListener("click", () => {
+pauseBtn.addEventListener("click", () => {
   generateToast({
-    message: "⚠️ You stopped the clock? ⚠️",
+    message: "⚠️ You paused the clock? ⚠️",
     background: "hsl(350 100% 66.5%)",
     color: "hsl(350 100% 13.5%)",
   });
