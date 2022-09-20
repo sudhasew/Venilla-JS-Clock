@@ -74,8 +74,8 @@ function generateToast({
   <style>
   .toast-container {
     position: fixed;
-    top: -5rem;
-    right: -20rem;
+    top: 0;
+    right: 0;
     display: grid;
     gap: 20px;
   }
